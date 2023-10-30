@@ -1,17 +1,17 @@
-"use client"
-import { Select, SelectItem, Avatar } from "@nextui-org/react"
-import { tokens } from "./data"
+"use client";
+import { Select, SelectItem, Avatar } from "@nextui-org/react";
+import { tokens } from "./data";
 
 const Bridge = () => {
   return (
-    <>
+    <div className="mx-auto lg:w-1/4 ">
       <Select
         items={tokens}
         label="From Token"
         variant="bordered"
         isMultiline={false}
         onChange={(e) => {
-          console.log(e.target.value)
+          console.log(e.target.value);
         }}
         selectionMode="single"
         placeholder="Select a Token"
@@ -33,7 +33,7 @@ const Bridge = () => {
                 </div>
               ))}
             </div>
-          )
+          );
         }}
       >
         {(user) => (
@@ -55,7 +55,7 @@ const Bridge = () => {
           </SelectItem>
         )}
       </Select>
-    </>
-  )
-}
-export default Bridge
+    </div>
+  );
+};
+export default Bridge;
