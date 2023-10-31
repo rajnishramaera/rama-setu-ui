@@ -14,7 +14,7 @@ export function ThemeSwitcher() {
   if (!mounted) return null
 
   return (
-    <div className="scale-75">
+    <div className="scale-75 cursor-pointer">
       <img
         onClick={() => setTheme(theme === "light" ? "dark" : "light")}
         src={theme === "light" ? "/light.svg" : "/dark.svg"}

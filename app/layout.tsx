@@ -35,7 +35,19 @@ export default function RootLayout({
       lang="en"
       className={` dark ${inter.variable} ${roboto_mono.variable} ${jetbrains_mono.variable} px-2`}
     >
-      <body className=" font-jet">
+      <body className=" font-jet area px-4">
+        <ul className="circles">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
         <Providers>{children}</Providers>
       </body>
     </html>

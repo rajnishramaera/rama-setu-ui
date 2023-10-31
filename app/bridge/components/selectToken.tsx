@@ -5,7 +5,7 @@ import { tokens } from "@/app/_config/tokens"
 import { isNumeric } from "@/app/_utils/isNumeric"
 
 const SelectToken = () => {
-  const { setToken } = useTokenStore()
+  const { token, setToken } = useTokenStore()
   const { amount, setAmount } = useAmountStore()
 
   return (
@@ -67,6 +67,7 @@ const SelectToken = () => {
           label: "text-end",
         }}
         isClearable
+        isDisabled={!token}
         isInvalid={!isNumeric(amount)}
         labelPlacement="outside"
         errorMessage={!isNumeric(amount) && "Invalid number"}
