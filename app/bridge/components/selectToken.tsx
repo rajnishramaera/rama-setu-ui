@@ -17,12 +17,13 @@ const SelectToken = () => {
         isMultiline={false}
         onChange={(e) => {
           setToken(e.target.value)
+          // console.log(tokens.find((token) => e.target.value === token.id))
         }}
         selectionMode="single"
         placeholder="Select a Token"
         labelPlacement="outside"
         classNames={{
-          base: "max-w-1/2",
+          base: "w-3/5",
           trigger: "min-h-unit-12 py-2 rounded-large",
         }}
         renderValue={(items) => {
@@ -31,7 +32,7 @@ const SelectToken = () => {
               {items.map((item: any) => (
                 <div
                   key={item.key}
-                  className=" h-fit p-1 flex gap-4 items-center "
+                  className=" h-fit p-1 flex gap-4 items-center"
                 >
                   <Avatar alt={item.data.name} size="sm" src={item.data.icon} />
                   {item.data.name}
@@ -41,19 +42,19 @@ const SelectToken = () => {
           )
         }}
       >
-        {(user) => (
-          <SelectItem key={user.id} textValue={user.name}>
+        {(token) => (
+          <SelectItem key={token.id} textValue={token.name}>
             <div className="flex gap-2 items-center">
               <Avatar
-                alt={user.name}
+                alt={token.name}
                 className="flex-shrink-0"
                 size="sm"
-                src={user.icon}
+                src={token.icon}
               />
               <div className="flex flex-col">
-                <span className="text-small">{user.name}</span>
+                <span className="text-small">{token.name}</span>
                 <span className="text-tiny text-default-400">
-                  {user.moreDetils}
+                  {token.moreDetils}
                 </span>
               </div>
             </div>
@@ -62,7 +63,7 @@ const SelectToken = () => {
       </Select>
       <Input
         classNames={{
-          base: "max-w-1/2 text-end rounded-medium",
+          base: "w-2/5 text-end rounded-medium",
           label: "text-end",
         }}
         isClearable
