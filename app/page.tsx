@@ -1,5 +1,5 @@
-import { ThemeSwitcher } from "@/components/ThemeSwitcher";
-import Bridge from "./bridge";
+import { ThemeSwitcher } from "@/common/ThemeSwitcher"
+import Bridge from "./bridge"
 
 export default function Home() {
   return (
@@ -11,5 +11,5 @@ export default function Home() {
 
       <Bridge />
     </main>
-  );
+  )
 }

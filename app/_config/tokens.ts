@@ -1,25 +1,25 @@
 export const tokens = [
   {
     id: "rama",
-    name: "Ramaestta",
+    name: "Rama",
     icon: "/network/rama.svg",
     moreDetils: "Ramaestta Chain",
   },
   {
     id: "bnb",
-    name: "BNB Smart Chain",
+    name: "BNB",
     icon: "/network/bnb.svg",
     moreDetils: "BNB Smart Chain",
   },
   {
     id: "eth",
-    name: "Ethereum",
+    name: "Eth",
     icon: "/network/eth.svg",
     moreDetils: "Ethereum",
   },
   {
-    id: "polygon",
-    name: "Polygon",
+    id: "matic",
+    name: "Matic",
     icon: "/network/polygon.svg",
     moreDetils: "Polygon",
   },

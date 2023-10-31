@@ -1,20 +1,20 @@
-"use client";
+"use client"
 
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useTheme } from "next-themes"
+import { useEffect, useState } from "react"
 
 export function ThemeSwitcher() {
-  const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false)
+  const { theme, setTheme } = useTheme()
 
   useEffect(() => {
-    setMounted(true);
-  }, []);
+    setMounted(true)
+  }, [])
 
-  if (!mounted) return null;
+  if (!mounted) return null
 
   return (
-    <div>
+    <div className="scale-90">
       <img
         onClick={() => setTheme(theme === "light" ? "dark" : "light")}
         src={theme === "light" ? "/light.svg" : "/dark.svg"}
@@ -24,5 +24,5 @@ export function ThemeSwitcher() {
         width={40}
       />
     </div>
-  );
+  )
 }
