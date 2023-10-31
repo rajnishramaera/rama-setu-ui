@@ -1,11 +1,9 @@
-import Bridge from "./bridge"
-import Header from "@/common/header"
+import BridgeCard from "./bridgeCard"
 
 export default function Home() {
   return (
     <main className="h-screen">
-      <Header />
-      <Bridge />
+      <BridgeCard />
     </main>
   )
 }

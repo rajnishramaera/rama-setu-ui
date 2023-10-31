@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
-import { Inter, Roboto_Mono, JetBrains_Mono } from "next/font/google"
+import { Inter, JetBrains_Mono, Roboto_Mono } from "next/font/google"
+import Header from "./common/header"
 import "./globals.css"
 import { Providers } from "./providers"
 
@@ -48,7 +49,10 @@ export default function RootLayout({
           <li></li>
           <li></li>
         </ul>
-        <Providers>{children}</Providers>
+        <Providers>
+          <Header />
+          {children}
+        </Providers>
       </body>
     </html>
   )
