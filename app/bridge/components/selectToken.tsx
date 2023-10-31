@@ -9,7 +9,7 @@ const SelectToken = () => {
   const { amount, setAmount } = useAmountStore()
 
   return (
-    <div className="flex gap-2 px-1">
+    <div className="flex gap-2">
       <Select
         items={tokens}
         label="Token"
@@ -22,8 +22,8 @@ const SelectToken = () => {
         placeholder="Select a Token"
         labelPlacement="outside"
         classNames={{
-          base: "max-w-1/2 ",
-          trigger: "min-h-unit-12 py-2",
+          base: "max-w-1/2",
+          trigger: "min-h-unit-12 py-2 rounded-large",
         }}
         renderValue={(items) => {
           return (
@@ -61,7 +61,10 @@ const SelectToken = () => {
         )}
       </Select>
       <Input
-        className="max-w-1/2 text-end rounded-medium"
+        classNames={{
+          base: "max-w-1/2 text-end rounded-medium",
+          label: "text-end",
+        }}
         isClearable
         isInvalid={!isNumeric(amount)}
         labelPlacement="outside"

@@ -1,14 +1,10 @@
-import { ThemeSwitcher } from "@/common/ThemeSwitcher"
 import Bridge from "./bridge"
+import Header from "@/common/header"
 
 export default function Home() {
   return (
-    <main>
-      <div className="flex justify-between p-4">
-        <h2>Rama - Bridge</h2>
-        <ThemeSwitcher />
-      </div>
-
+    <main className="">
+      <Header />
       <Bridge />
     </main>
   )
