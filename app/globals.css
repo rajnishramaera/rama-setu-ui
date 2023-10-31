@@ -22,7 +22,7 @@
 
 .circles li {
   z-index: -1;
-  background: #4e54c8;
+  background: #4e54c880;
   background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
   position: absolute;
   display: block;
