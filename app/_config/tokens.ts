@@ -1,4 +1,6 @@
-export const tokens = [
+import { Tokens } from "@/app/_types/tokens"
+
+export const tokens: Tokens[] = [
   {
     id: "RAMA",
     name: "RAMA",

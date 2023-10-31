@@ -27,12 +27,12 @@ export const useAmountStore = create<AmountStore>()((set) => ({
   setAmount: (id) => set({ amount: id }),
 }))
 
-export const useFromNetwork = create<FromNetworkStore>()((set) => ({
+export const useFromNetworkStore = create<FromNetworkStore>()((set) => ({
   fromNetwork: "",
   setFromNetwork: (id) => set({ fromNetwork: id }),
 }))
 
-export const useToNetwork = create<ToNetworkStore>()((set) => ({
+export const useToNetworkStore = create<ToNetworkStore>()((set) => ({
   toNetwork: "",
   setToNetwork: (id) => set({ toNetwork: id }),
 }))

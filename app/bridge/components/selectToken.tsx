@@ -26,23 +26,25 @@ const SelectToken = () => {
           base: "w-3/5",
           trigger: "min-h-unit-12 py-2 rounded-large",
         }}
-        renderValue={(items) => {
+        renderValue={() => {
           return (
             <div className="flex flex-wrap gap-2">
-              {items.map((item: any) => (
-                <div
-                  key={item.key}
-                  className=" h-fit p-1 flex gap-4 items-center"
-                >
-                  <Avatar alt={item.data.name} size="sm" src={item.data.icon} />
-                  {item.data.name}
-                </div>
-              ))}
+              <div
+                key={tokens.find((tkn) => token === tkn.id)?.id}
+                className=" h-fit p-1 flex gap-4 items-center"
+              >
+                <Avatar
+                  alt={tokens.find((tkn) => token === tkn.id)?.name}
+                  size="sm"
+                  src={tokens.find((tkn) => token === tkn.id)?.icon}
+                />
+                {tokens.find((tkn) => token === tkn.id)?.name}
+              </div>
             </div>
           )
         }}
       >
-        {(token) => (
+        {(token: any) => (
           <SelectItem key={token.id} textValue={token.name}>
             <div className="flex gap-2 items-center">
               <Avatar
