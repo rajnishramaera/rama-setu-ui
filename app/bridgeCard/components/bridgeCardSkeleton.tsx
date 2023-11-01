@@ -3,7 +3,7 @@ import { Card, Skeleton } from "@nextui-org/react"
 export default function BridgeCardSkeleton() {
   return (
     <Card
-      className=" space-y-5  mx-auto border-2 dark:border-gray-600 border-gray-300 lg:w-[30%]  p-6 rounded-medium"
+      className=" space-y-6  mx-auto  dark:bg-gray-700 lg:w-[30%]  p-6 rounded-medium"
       radius="lg"
     >
       <Skeleton className="rounded-lg">
