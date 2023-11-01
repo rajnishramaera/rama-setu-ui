@@ -2,7 +2,8 @@ import type { Metadata } from "next"
 import { Inter, JetBrains_Mono, Roboto_Mono } from "next/font/google"
 import Header from "./common/header"
 import "./globals.css"
-import { Providers } from "./providers"
+import { ThemeProviders } from "./_providers/themeProviders"
+import { Web3Providers } from "./_providers/web3Providers"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -49,10 +50,12 @@ export default function RootLayout({
           <li></li>
           <li></li>
         </ul>
-        <Providers>
-          <Header />
-          {children}
-        </Providers>
+        <ThemeProviders>
+          <Web3Providers>
+            <Header />
+            {children}
+          </Web3Providers>
+        </ThemeProviders>
       </body>
     </html>
   )

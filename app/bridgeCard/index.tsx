@@ -1,12 +1,14 @@
 import SelectFromChain from "./components/selectFromChain"
 import SelectToChain from "./components/selectToChain"
 import SelectToken from "./components/selectToken"
+import { ConnectButton } from "@rainbow-me/rainbowkit"
 
 const SlideOne = () => (
   <>
     <SelectToken />
     <SelectFromChain />
     <SelectToChain />
+    <ConnectButton />
   </>
 )
 
