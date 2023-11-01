@@ -30,7 +30,6 @@ const wagmiConfig = createConfig({
 })
 export function Web3Providers({ children }: { children: React.ReactNode }) {
   const { theme } = useTheme()
-  console.log(theme)
 
   return (
     <WagmiConfig config={wagmiConfig}>

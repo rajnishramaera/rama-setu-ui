@@ -75,6 +75,7 @@ const SelectToken = () => {
         errorMessage={!isNumeric(amount) && "Invalid number"}
         placeholder="Amount"
         size="lg"
+        inputMode="numeric"
         variant="bordered"
         label="Amount"
         value={amount}
