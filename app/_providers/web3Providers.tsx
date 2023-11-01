@@ -1,26 +1,25 @@
 "use client"
 
-import "@rainbow-me/rainbowkit/styles.css"
 import {
   RainbowKitProvider,
   darkTheme,
   getDefaultWallets,
   lightTheme,
 } from "@rainbow-me/rainbowkit"
+import "@rainbow-me/rainbowkit/styles.css"
+import { useTheme } from "next-themes"
 import { WagmiConfig, configureChains, createConfig } from "wagmi"
 import { arbitrum, base, mainnet, optimism, polygon, zora } from "wagmi/chains"
-import { alchemyProvider } from "wagmi/providers/alchemy"
 import { publicProvider } from "wagmi/providers/public"
-import { useTheme } from "next-themes"
 
 const { chains, publicClient } = configureChains(
   [mainnet, polygon, optimism, arbitrum, base, zora],
-  [alchemyProvider({ apiKey: process.env.ALCHEMY_ID }), publicProvider()]
+  [publicProvider()]
 )
 
 const { connectors } = getDefaultWallets({
-  appName: "My RainbowKit App",
-  projectId: "YOUR_PROJECT_ID",
+  appName: "RamaSETU",
+  projectId: "91d13f90fa3c55cac0cba326a4fb1020",
   chains,
 })
 
