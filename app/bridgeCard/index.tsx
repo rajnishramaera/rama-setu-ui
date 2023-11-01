@@ -1,15 +1,17 @@
 "use client"
+import { ConnectButton } from "@rainbow-me/rainbowkit"
+import { useEffect, useState } from "react"
+import BridgeCardSkeleton from "./components/bridgeCardSkeleton"
 import SelectFromChain from "./components/selectFromChain"
 import SelectToChain from "./components/selectToChain"
 import SelectToken from "./components/selectToken"
-import { ConnectButton } from "@rainbow-me/rainbowkit"
-import BridgeCardSkeleton from "./components/bridgeCardSkeleton"
-import { useEffect, useState } from "react"
+import SwitchNetworks from "./components/switchNetworks"
 
 const SlideOne = () => (
   <>
     <SelectToken />
     <SelectFromChain />
+    <SwitchNetworks />
     <SelectToChain />
     <ConnectButton />
   </>

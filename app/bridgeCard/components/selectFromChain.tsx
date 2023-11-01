@@ -1,10 +1,11 @@
 "use client"
 import { networks } from "@/app/_config/networks"
-import { useFromNetworkStore } from "@/app/_store/zustand"
+import { useFromNetworkStore, useToNetworkStore } from "@/app/_store/zustand"
 import { Select, Avatar, SelectItem } from "@nextui-org/react"
 
 const SelectFromChain = () => {
   const { fromNetwork, setFromNetwork } = useFromNetworkStore()
+  const { toNetwork } = useToNetworkStore()
   return (
     <Select
       items={networks}
