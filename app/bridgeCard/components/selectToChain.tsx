@@ -36,6 +36,9 @@ const SelectToChain = () => {
                 src={networks.find((ntwk) => toNetwork === ntwk.id)?.icon}
               />
               {networks.find((ntwk) => toNetwork === ntwk.id)?.name}
+              <span className="text-tiny">
+                {networks.find((ntwk) => toNetwork === ntwk.id)?.moreDetils}
+              </span>
             </div>
           </div>
         )
