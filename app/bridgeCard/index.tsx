@@ -23,12 +23,6 @@ const BridgeCard = () => {
     setMounted(true)
   }, [])
 
-  setTimeout(function () {
-    if (!mounted) {
-      console.log("first")
-    }
-  }, 5000)
-
   return (
     <div className="flex h-full items-center">
       {mounted ? (
