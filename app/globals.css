@@ -102,8 +102,8 @@
 
 .circles li:nth-child(10) {
   left: 85%;
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   animation-delay: 0s;
   animation-duration: 11s;
 }
