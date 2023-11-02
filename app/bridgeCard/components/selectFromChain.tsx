@@ -1,11 +1,10 @@
 "use client"
 import { networks } from "@/app/_config/networks"
-import { useFromNetworkStore, useToNetworkStore } from "@/app/_store/zustand"
-import { Select, Avatar, SelectItem } from "@nextui-org/react"
+import { useFromNetworkStore } from "@/app/_store/zustand"
+import { Avatar, Select, SelectItem } from "@nextui-org/react"
 
 const SelectFromChain = () => {
   const { fromNetwork, setFromNetwork } = useFromNetworkStore()
-  const { toNetwork } = useToNetworkStore()
   return (
     <Select
       items={networks}
@@ -20,14 +19,14 @@ const SelectFromChain = () => {
       labelPlacement="outside"
       classNames={{
         base: "w-full",
-        trigger: "min-h-unit-12 py-2 rounded-large",
+        trigger: "min-h-unit-12 rounded-large py-2",
       }}
       renderValue={() => {
         return (
           <div className="flex flex-wrap gap-2">
             <div
               key={networks.find((ntwk) => fromNetwork === ntwk.id)?.id}
-              className=" h-fit p-1 flex gap-4 items-center"
+              className=" flex h-fit items-center gap-4 p-1"
             >
               <Avatar
                 alt={networks.find((ntwk) => fromNetwork === ntwk.id)?.name}
