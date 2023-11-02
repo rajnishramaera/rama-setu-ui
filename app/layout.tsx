@@ -37,6 +37,33 @@ const Circles = (
     <li>
       <img className="invert dark:invert-0" src="/network/rama.svg" />
     </li>
+    <li>
+      <img className="invert dark:invert-0" src="/network/rama.svg" />
+    </li>
+    <li>
+      <img className="invert dark:invert-0" src="/network/rama.svg" />
+    </li>
+    <li>
+      <img className="invert dark:invert-0" src="/network/rama.svg" />
+    </li>
+    <li>
+      <img className="invert dark:invert-0" src="/network/rama.svg" />
+    </li>
+    <li>
+      <img className="invert dark:invert-0" src="/network/rama.svg" />
+    </li>
+    <li>
+      <img className="invert dark:invert-0" src="/network/rama.svg" />
+    </li>
+    <li>
+      <img className="invert dark:invert-0" src="/network/rama.svg" />
+    </li>
+    <li>
+      <img className="invert dark:invert-0" src="/network/rama.svg" />
+    </li>
+    <li>
+      <img className="invert dark:invert-0" src="/network/rama.svg" />
+    </li>
   </ul>
 )
 const inter = Inter({
