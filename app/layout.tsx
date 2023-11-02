@@ -35,20 +35,39 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={` dark ${inter.variable} ${roboto_mono.variable} ${jetbrains_mono.variable} px-2`}
-    >
+      className={` dark ${inter.variable} ${roboto_mono.variable} ${jetbrains_mono.variable} px-2`}>
       <body className=" font-jet area px-4">
         <ul className="circles">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
+          <li>
+            <img className="invert dark:invert-0" src="/network/rama.svg" />
+          </li>
+          <li>
+            <img className="invert dark:invert-0" src="/network/rama.svg" />
+          </li>{" "}
+          <li>
+            <img className="invert dark:invert-0" src="/network/rama.svg" />
+          </li>{" "}
+          <li>
+            <img className="invert dark:invert-0" src="/network/rama.svg" />
+          </li>{" "}
+          <li>
+            <img className="invert dark:invert-0" src="/network/rama.svg" />
+          </li>{" "}
+          <li>
+            <img className="invert dark:invert-0" src="/network/rama.svg" />
+          </li>{" "}
+          <li>
+            <img className="invert dark:invert-0" src="/network/rama.svg" />
+          </li>{" "}
+          <li>
+            <img className="invert dark:invert-0" src="/network/rama.svg" />
+          </li>{" "}
+          <li>
+            <img className="invert dark:invert-0" src="/network/rama.svg" />
+          </li>{" "}
+          <li>
+            <img className="invert dark:invert-0" src="/network/rama.svg" />
+          </li>
         </ul>
         <ThemeProviders>
           <Web3Providers>
