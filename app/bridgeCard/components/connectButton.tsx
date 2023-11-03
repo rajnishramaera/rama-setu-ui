@@ -15,16 +15,17 @@ const ConnectButton = () => {
       setInputAddress(data?.address)
     },
   })
+
   return (
-    <div style={{ marginTop: 4 }}>
+    <div className="mt-4">
       {!address ? (
         <Button variant="solid" fullWidth onClick={openConnectModal}>
-          Connect Wallet to Get Tokens
+          Connect Wallet
         </Button>
       ) : (
         <>
           <Button variant="solid" fullWidth>
-            Switch
+            Swap
           </Button>
         </>
       )}

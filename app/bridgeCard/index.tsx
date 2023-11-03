@@ -1,11 +1,11 @@
 "use client"
 import { useEffect, useState } from "react"
 import BridgeCardSkeleton from "./components/bridgeCardSkeleton"
+import ConnectButton from "./components/connectButton"
 import SelectFromChain from "./components/selectFromChain"
 import SelectToChain from "./components/selectToChain"
 import SelectToken from "./components/selectToken"
 import SwitchNetworks from "./components/switchNetworks"
-import ConnectButton from "./components/connectButton"
 
 const SlideOne = () => (
   <>
