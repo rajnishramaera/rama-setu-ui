@@ -19,12 +19,19 @@ const ConnectButton = () => {
   return (
     <div className="mt-4">
       {!address ? (
-        <Button variant="solid" fullWidth onClick={openConnectModal}>
+        <Button
+          variant="solid"
+          fullWidth
+          onClick={openConnectModal}
+          className="bg-gradient-to-r from-amber-500 to-pink-500  dark:from-slate-900 dark:to-slate-700">
           Connect Wallet
         </Button>
       ) : (
         <>
-          <Button variant="solid" fullWidth>
+          <Button
+            variant="solid"
+            fullWidth
+            className="bg-gradient-to-r from-amber-500 to-pink-500  dark:from-slate-700 dark:to-slate-900">
             Swap
           </Button>
         </>
