@@ -84,7 +84,7 @@ const jetbrains_mono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Rama Setu",
+  title: "RamaSETU",
   description: "Rama Bridge",
 }
 
