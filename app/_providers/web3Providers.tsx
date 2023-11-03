@@ -10,19 +10,28 @@ import {
 import "@rainbow-me/rainbowkit/styles.css"
 import { useTheme } from "next-themes"
 import { WagmiConfig, configureChains, createConfig } from "wagmi"
-import { mainnet, polygon } from "wagmi/chains"
+import {
+  mainnet,
+  polygon,
+  bsc,
+  avalanche,
+  bscTestnet,
+  polygonMumbai,
+  avalancheFuji,
+  optimism,
+} from "wagmi/chains"
 import { publicProvider } from "wagmi/providers/public"
 
-const RAMESTTA: Chain = {
+const Ramestta: Chain = {
   id: 1370,
-  name: "RAMESTTA",
-  network: "RAMESTTA",
+  name: "Ramestta",
+  network: "Ramestta",
   iconUrl:
     "https://raw.githubusercontent.com/Ramestta-Blockchain/ramascan/main/public/static/ramestta_32x32_mm_icon.svg",
   iconBackground: "#fff",
   nativeCurrency: {
     decimals: 18,
-    name: "RAMESTTA",
+    name: "RAMA",
     symbol: "RAMA",
   },
   rpcUrls: {
@@ -33,17 +42,57 @@ const RAMESTTA: Chain = {
     default: { name: "SnowTrace", url: "https://ramascan.com/" },
     etherscan: { name: "SnowTrace", url: "https://ramascan.com/" },
   },
-  /* contracts: {
+  contracts: {
     multicall3: {
       address: "0xca11bde05977b3631167028862be2a173976ca11",
-      blockCreated: 11_907_934,
+      blockCreated: 1_907_934,
     },
-  }, */
+  },
+  testnet: false,
+}
+
+const RamesttaTestnet: Chain = {
+  id: 1377,
+  name: "Ramestta Test",
+  network: "Ramestta Test",
+  iconUrl:
+    "https://raw.githubusercontent.com/Ramestta-Blockchain/ramascan/main/public/static/ramestta_32x32_mm_icon.svg",
+  iconBackground: "#fff",
+  nativeCurrency: {
+    decimals: 18,
+    name: "RAMA",
+    symbol: "RAMA",
+  },
+  rpcUrls: {
+    public: { http: ["https://testnet.ramestta.com"] },
+    default: { http: ["https://testnet.ramestta.com"] },
+  },
+  blockExplorers: {
+    default: { name: "SnowTrace", url: "https://testnet.ramascan.com/" },
+    etherscan: { name: "SnowTrace", url: "https://testnet.ramascan.com/" },
+  },
+  contracts: {
+    multicall3: {
+      address: "0xca11bde05977b3631167028862be2a173976ca11",
+      blockCreated: 1_907_934,
+    },
+  },
   testnet: false,
 }
 
 const { chains, publicClient } = configureChains(
-  [RAMESTTA, mainnet, polygon],
+  [
+    Ramestta,
+    RamesttaTestnet,
+    bsc,
+    bscTestnet,
+    mainnet,
+    polygon,
+    polygonMumbai,
+    avalanche,
+    avalancheFuji,
+    optimism,
+  ],
   [publicProvider()]
 )
 
