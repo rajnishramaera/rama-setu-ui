@@ -1,8 +1,9 @@
 import { create } from "zustand"
+import { Tokens } from "../_types/tokens"
 
 type TokenStore = {
-  token: string
-  setToken: (id: string) => void
+  token: Tokens | undefined
+  setToken: (id: any) => void
 }
 type AmountStore = {
   amount: string
@@ -18,7 +19,7 @@ type ToNetworkStore = {
 }
 
 export const useTokenStore = create<TokenStore>()((set) => ({
-  token: "",
+  token: undefined,
   setToken: (id) => set({ token: id }),
 }))
 

@@ -13,7 +13,7 @@ import { WagmiConfig, configureChains, createConfig } from "wagmi"
 import {
   mainnet,
   polygon,
-  bsc,
+  // bsc,
   avalanche,
   bscTestnet,
   polygonMumbai,
@@ -35,8 +35,8 @@ const Ramestta: Chain = {
     symbol: "RAMA",
   },
   rpcUrls: {
-    public: { http: ["https://blockchain.ramestta.com"] },
-    default: { http: ["https://blockchain.ramestta.com"] },
+    public: { http: ["http://127.0.0.1:8545"] },
+    default: { http: ["http://127.0.0.1:8545"] },
   },
   blockExplorers: {
     default: { name: "SnowTrace", url: "https://ramascan.com/" },
@@ -70,6 +70,35 @@ const RamesttaTestnet: Chain = {
   blockExplorers: {
     default: { name: "SnowTrace", url: "https://testnet.ramascan.com/" },
     etherscan: { name: "SnowTrace", url: "https://testnet.ramascan.com/" },
+  },
+  contracts: {
+    multicall3: {
+      address: "0xca11bde05977b3631167028862be2a173976ca11",
+      blockCreated: 1_907_934,
+    },
+  },
+  testnet: false,
+}
+
+const bsc: Chain = {
+  id: 56,
+  name: "BSC",
+  network: "BSC",
+  iconUrl:
+    "https://raw.githubusercontent.com/Ramestta-Blockchain/ramascan/main/public/static/ramestta_32x32_mm_icon.svg",
+  iconBackground: "#fff",
+  nativeCurrency: {
+    decimals: 18,
+    name: "BNB",
+    symbol: "BNB",
+  },
+  rpcUrls: {
+    public: { http: ["http://127.0.0.1:8546"] },
+    default: { http: ["http://127.0.0.1:8546"] },
+  },
+  blockExplorers: {
+    default: { name: "SnowTrace", url: "https://ramascan.com/" },
+    etherscan: { name: "SnowTrace", url: "https://ramascan.com/" },
   },
   contracts: {
     multicall3: {

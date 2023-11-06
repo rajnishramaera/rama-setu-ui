@@ -16,7 +16,7 @@ const SelectToken = () => {
         variant="bordered"
         isMultiline={false}
         onChange={(e) => {
-          setToken(e.target.value)
+          setToken(tokens.find((token) => e.target.value === token.id))
           // console.log(tokens.find((token) => e.target.value === token.id))
         }}
         selectionMode="single"
@@ -30,20 +30,14 @@ const SelectToken = () => {
           return (
             <div className="flex flex-wrap gap-2">
               <div
-                key={tokens.find((tkn) => token === tkn.id)?.id}
-                className=" h-fit p-1 flex gap-4 items-center"
-              >
-                <Avatar
-                  alt={tokens.find((tkn) => token === tkn.id)?.name}
-                  size="sm"
-                  src={tokens.find((tkn) => token === tkn.id)?.icon}
-                />
-                {tokens.find((tkn) => token === tkn.id)?.name}
+                key={token.id}
+                className=" h-fit p-1 flex gap-4 items-center">
+                <Avatar alt={token.name} size="sm" src={token.icon} />
+                {token.name}
               </div>
             </div>
           )
-        }}
-      >
+        }}>
         {(token: any) => (
           <SelectItem key={token.id} textValue={token.name}>
             <div className="flex gap-2 items-center">
