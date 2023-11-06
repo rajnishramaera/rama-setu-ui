@@ -6,18 +6,20 @@ import { useEffect } from "react"
 import { useNetwork, useSwitchNetwork } from "wagmi"
 
 const SelectFromChain = () => {
-  const { chain } = useNetwork()
-  const { chains, isLoading, pendingChainId, switchNetwork } =
-    useSwitchNetwork()
+  const { chain, chains } = useNetwork()
+  const { isLoading, switchNetwork } = useSwitchNetwork()
   const { fromNetwork, setFromNetwork } = useFromNetworkStore()
   const { toNetwork } = useToNetworkStore()
 
   useEffect(() => {
     setFromNetwork(chain)
   }, [chain])
+
   return (
     <Select
-      items={chains}
+      items={chains.filter((chain) => {
+        return chain?.id !== toNetwork?.id
+      })}
       isLoading={isLoading}
       label="From Chain"
       variant="bordered"
@@ -39,10 +41,16 @@ const SelectFromChain = () => {
         }
         return (
           <div className="flex flex-wrap gap-2">
-            <div key={chain?.id} className=" flex h-fit items-center gap-4 p-1">
-              <Avatar alt={chain?.name} size="sm" src={chain?.iconUrl} />
-              {chain?.name}
-              <span className="text-tiny">{chain?.network}</span>
+            <div
+              key={fromNetwork?.id}
+              className=" flex h-fit items-center gap-4 p-1">
+              <Avatar
+                alt={fromNetwork?.name}
+                size="sm"
+                src={fromNetwork?.iconUrl}
+              />
+              {fromNetwork?.name}
+              <span className="text-tiny">{fromNetwork?.network}</span>
             </div>
           </div>
         )

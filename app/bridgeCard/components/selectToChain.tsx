@@ -1,21 +1,26 @@
 "use client"
-import { networks } from "@/app/_config/networks"
 import { useFromNetworkStore, useToNetworkStore } from "@/app/_store/zustand"
-import { Select, Avatar, SelectItem } from "@nextui-org/react"
+import { Avatar, Select, SelectItem } from "@nextui-org/react"
+import { useNetwork } from "wagmi"
 
 const SelectToChain = () => {
+  const { chain, chains } = useNetwork()
   const { toNetwork, setToNetwork } = useToNetworkStore()
   const { fromNetwork } = useFromNetworkStore()
+
   return (
     <Select
-      items={networks.filter((network) => {
-        return network.id !== fromNetwork
+      items={chains.filter((chain) => {
+        return chain?.id !== fromNetwork?.id
       })}
+      isDisabled={!chain?.id}
       label="To Chain"
       variant="bordered"
       isMultiline={false}
       onChange={(e) => {
-        setToNetwork(e.target.value)
+        setToNetwork(
+          chains.find((chain) => chain.id === parseInt(e.target.value))
+        )
       }}
       selectionMode="single"
       placeholder="Select a Network"
@@ -28,17 +33,15 @@ const SelectToChain = () => {
         return (
           <div className="flex flex-wrap gap-2">
             <div
-              key={networks.find((ntwk) => toNetwork === ntwk.id)?.id}
+              key={toNetwork?.id}
               className=" h-fit p-1 flex gap-4 items-center">
               <Avatar
-                alt={networks.find((ntwk) => toNetwork === ntwk.id)?.name}
+                alt={toNetwork?.name}
                 size="sm"
-                src={networks.find((ntwk) => toNetwork === ntwk.id)?.icon}
+                src={toNetwork?.iconUrl}
               />
-              {networks.find((ntwk) => toNetwork === ntwk.id)?.name}
-              <span className="text-tiny">
-                {networks.find((ntwk) => toNetwork === ntwk.id)?.moreDetils}
-              </span>
+              {toNetwork?.name}
+              <span className="text-tiny">{toNetwork?.network}</span>
             </div>
           </div>
         )
@@ -50,12 +53,12 @@ const SelectToChain = () => {
               alt={network.name}
               className="flex-shrink-0"
               size="sm"
-              src={network.icon}
+              src={network.iconUrl}
             />
             <div className="flex flex-col">
               <span className="text-small">{network.name}</span>
               <span className="text-tiny text-default-400">
-                {network.moreDetils}
+                {network.network}
               </span>
             </div>
           </div>

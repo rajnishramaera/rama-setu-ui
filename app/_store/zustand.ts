@@ -9,12 +9,12 @@ type AmountStore = {
   setAmount: (id: string) => void
 }
 type FromNetworkStore = {
-  fromNetwork: {}
-  setFromNetwork: (id: {}) => void
+  fromNetwork: any
+  setFromNetwork: (id: any) => void
 }
 type ToNetworkStore = {
-  toNetwork: string
-  setToNetwork: (id: string) => void
+  toNetwork: any
+  setToNetwork: (id: any) => void
 }
 
 export const useTokenStore = create<TokenStore>()((set) => ({
@@ -28,11 +28,11 @@ export const useAmountStore = create<AmountStore>()((set) => ({
 }))
 
 export const useFromNetworkStore = create<FromNetworkStore>()((set) => ({
-  fromNetwork: "",
+  fromNetwork: {},
   setFromNetwork: (id) => set({ fromNetwork: id }),
 }))
 
 export const useToNetworkStore = create<ToNetworkStore>()((set) => ({
-  toNetwork: "",
+  toNetwork: {},
   setToNetwork: (id) => set({ toNetwork: id }),
 }))
