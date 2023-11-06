@@ -9,8 +9,8 @@ type AmountStore = {
   setAmount: (id: string) => void
 }
 type FromNetworkStore = {
-  fromNetwork: string
-  setFromNetwork: (id: string) => void
+  fromNetwork: {}
+  setFromNetwork: (id: {}) => void
 }
 type ToNetworkStore = {
   toNetwork: string
