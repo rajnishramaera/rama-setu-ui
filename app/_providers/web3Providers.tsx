@@ -113,6 +113,11 @@ export function Web3Providers({ children }: { children: React.ReactNode }) {
   return (
     <WagmiConfig config={wagmiConfig}>
       <RainbowKitProvider
+        appInfo={{
+          appName: "Rama Setu",
+          learnMoreUrl: "https://ramestta.com",
+        }}
+        modalSize="compact"
         chains={chains}
         coolMode
         theme={
